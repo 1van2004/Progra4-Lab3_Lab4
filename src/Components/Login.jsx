@@ -8,15 +8,14 @@ export default function Login(){
 
   const {setUser} = useContext(AuthContext)
 
-const EmailRef = useRef()
-  const passwordRef = useRef()
+  const { login } = useLogin()
+  const emailref = useRef()
+  const passwordref = useRef()
   const [error, SetError] = useState('')
 
-  const { login } = useLogin()
-
   const handleLogin = () => {
-    const email = EmailRef.current.value
-    const password = passwordRef.current.value
+    const email = emailref.current.value
+    const password = passwordref.current.value
     const isSuccess = login(email, password);
     if (!isSuccess)
     {
@@ -37,7 +36,7 @@ const EmailRef = useRef()
 
     type="email"
     placeholder='Correo'
-    ref={EmailRef}
+    ref={emailref}
     
     />
 
@@ -45,7 +44,7 @@ const EmailRef = useRef()
     <input
     type="password"
     placeholder='Contraseña'
-    ref={passwordRef}
+    ref={passwordref}
     />
 <br/>
 <button onClick={handleLogin}>Insertar</button>

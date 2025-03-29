@@ -1,7 +1,7 @@
+import { useRef, useState } from "react";
 
 
 export function useLogin(){
-
 
     const login = (email, password) => {
 
@@ -11,6 +11,10 @@ export function useLogin(){
     }
       return false;
     };
+
+    const logout = () => {
+      setUser(null)
+    }
 
     return {login};
 }

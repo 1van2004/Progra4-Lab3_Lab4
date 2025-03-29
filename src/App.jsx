@@ -1,8 +1,8 @@
 import  Login  from './Components/Login'
 import './App.css'
-import Welcome from './Components/Welcome'
+import Home from './Components/Home'
 import { useLogin } from './Hooks/useLogin'
-import { AuthContext } from './Constext/AuthContext'
+import { AuthContext, AuthProvidert } from './Constext/AuthContext'
 import { useContext } from 'react'
 
 
@@ -11,8 +11,8 @@ function App() {
   const {user} = useContext(AuthContext)
   
   return (
-    <>
-    {user ? <Welcome userName={user}/> : <Login/> }
+<>
+    {user ? <Home userName={user}/> : <Login/> }
     
     </>
       )
